@@ -1,4 +1,4 @@
-Fullstack calculator application.
+**Fullstack calculator application**
 
 Utilising:
 
