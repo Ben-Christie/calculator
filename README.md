@@ -1,7 +1,7 @@
-**Fullstack calculator application**
+# Fullstack calculator application\*\*
 
-Utilising:
+**Utilising:**
 
-1. React
-2. Django
-3. MongoDB
+1. React for the front-end
+2. Django for the back-end
+3. MongoDB for the database
