@@ -1,25 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import Container from './components/Container';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <body className="h-screen w-screen bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400 flex items-center justify-center">
+      <Container />
+    </body>
   );
 }
 
+// export file to be used in index.js
 export default App;
