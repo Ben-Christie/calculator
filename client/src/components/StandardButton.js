@@ -5,9 +5,7 @@ function setStyle(style) {
 
 function getCorrectStyle(value) {
   if (value === '=') {
-    return setStyle('bg-green-600 row-span-3');
-  } else if (value === 'H') {
-    return setStyle('bg-blue-600 h-[50px]');
+    return setStyle('bg-green-600 row-span-4');
   } else if (value === 'C') {
     return setStyle('bg-red-600 h-[50px]');
   } else {
@@ -17,20 +15,15 @@ function getCorrectStyle(value) {
 
 function StandardButton(props) {
   //destructuring
-  const { value } = props;
-
-  const clickHandler = () => {
-    if (value === '=') {
-      console.log('equals');
-    }
-  };
+  const { value, clickHandler } = props;
 
   return (
     <div
-      onClick={clickHandler}
       className={`w-[80px] flex justify-center items-center font-bold text-white text-2xl rounded-[8px] my-[10px] shadow-lg hover:brightness-110 active:translate-y-[1px] cursor-pointer ${getCorrectStyle(
         value
       )}`}
+      onClick={clickHandler}
+      data-value={value}
     >
       {value}
     </div>
