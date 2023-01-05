@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import Screen from './Screen';
 import ButtonGrid from './ButtonGrid';
+import { evaluateArithmetic } from '../utilities/requests';
 
 function Container() {
   const [screen, setScreen] = useState('');
 
   const operatorsArray = ['', '+', '-', '×', '÷'];
 
-  function buttonClickHandler(event) {
+  async function buttonClickHandler(event) {
     const value = event.target.dataset.value;
     const lastChar = screen.charAt(screen.length - 1);
     if (
@@ -15,6 +16,17 @@ function Container() {
       !['C', '='].includes(value)
     ) {
       setScreen(screen + value);
+    }
+
+    // call api endpoint if = clicked
+    else if (value === '=') {
+      const returnedValue = await evaluateArithmetic(screen);
+      console.log(typeof returnedValue);
+      setScreen(returnedValue);
+    }
+    //implement delete button
+    else if (value === 'C') {
+      setScreen('');
     }
   }
 

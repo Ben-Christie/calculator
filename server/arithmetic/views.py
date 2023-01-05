@@ -2,8 +2,6 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
-
 
 def parse_request(str):
     if '×' in str:
@@ -26,7 +24,7 @@ def calculate(request):
         response = eval(parse_request(expression))
 
         return JsonResponse({
-            'response': response
+            'response': str(response)
         })
     else:
         return JsonResponse({
